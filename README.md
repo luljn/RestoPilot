@@ -1,0 +1,1 @@
+# This is a project for an application for managing and supervising a restaurant.

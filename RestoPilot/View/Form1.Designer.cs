@@ -38,10 +38,12 @@ partial class Form1 {
         this.FormBorderStyle = FormBorderStyle.FixedSingle;
         // Désactiver le bouton de maximisation.
         this.MaximizeBox = false;
-        // Adapter automatiquement la fenêtre à la taille de l'écran
+        // Adapter automatiquement la fenêtre à la taille de l'écran.
         this.WindowState = FormWindowState.Maximized;
-        // Positionner la fenêtre au centre de l'écran
+        // Positionner la fenêtre au centre de l'écran.
         this.StartPosition = FormStartPosition.CenterScreen;
+        // Changer la couleur de fond de la fenêtre.
+        this.BackColor = Color.White;
     }
 
     #endregion
