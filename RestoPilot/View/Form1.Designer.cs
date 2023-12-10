@@ -32,8 +32,16 @@ partial class Form1 {
         
         this.components = new System.ComponentModel.Container();
         this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(800, 450);
-        this.Text = "Form1";
+        // this.ClientSize = new System.Drawing.Size(800, 450);
+        this.Text = "RestoPilot";
+        // Rendre la fenêtre non redimensionnable.
+        this.FormBorderStyle = FormBorderStyle.FixedSingle;
+        // Désactiver le bouton de maximisation.
+        this.MaximizeBox = false;
+        // Adapter automatiquement la fenêtre à la taille de l'écran
+        this.WindowState = FormWindowState.Maximized;
+        // Positionner la fenêtre au centre de l'écran
+        this.StartPosition = FormStartPosition.CenterScreen;
     }
 
     #endregion
