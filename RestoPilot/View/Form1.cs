@@ -1,4 +1,6 @@
-﻿namespace RestoPilot.View;
+﻿using RestoPilot.Controller;
+
+namespace RestoPilot.View;
 
 public partial class Form1 : Form {    // Form used to build the menu of the application.
     public Form1() {
@@ -61,6 +63,8 @@ public partial class Form1 : Form {    // Form used to build the menu of the app
             item.FlatAppearance.MouseOverBackColor = Color.SlateBlue; // Changer la couleur de fond lors du survol
             this.Controls.Add(item);
         }
+
+        QuitButton.Click += QuitApp;
     }
 
     private void DesignButton(Button button) { // To design a button.
@@ -97,5 +101,10 @@ public partial class Form1 : Form {    // Form used to build the menu of the app
         label.AutoSize = true; // Le label s'adapte auto à son contenu.
         label.Left = (this.ClientSize.Width - label.Width) / 2;// Pour centrer le label automatiquement sur la fenêtre.
         this.Controls.Add(label);
+    }
+    
+    public void QuitApp(object sender, EventArgs e) {   // To close the app on the menu (with the button "Quitter").
+        
+        this.Close();
     }
 }

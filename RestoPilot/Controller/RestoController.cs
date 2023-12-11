@@ -15,6 +15,11 @@ public class RestoController {
         Application.Run(Menu = new Form1());
     }
 
+    public void QuitApp(object sender, EventArgs e) {   // To close the app on the menu (with the button "Quitter").
+        
+        Menu.Close();
+    }
+
     public void SetMenu(Form1 Menu) { this.Menu = Menu; }
     
     public Form1 GetMenu() { return this.Menu; }
