@@ -16,6 +16,9 @@
       <Compile Update="View\Form1.cs">
         <SubType>Form</SubType>
       </Compile>
+      <Compile Update="View\Form2.cs">
+        <SubType>Form</SubType>
+      </Compile>
     </ItemGroup>
 
 </Project>

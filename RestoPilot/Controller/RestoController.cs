@@ -5,6 +5,7 @@ namespace RestoPilot.Controller;
 public class RestoController {
 
     private Form1 Menu { set; get; }   // The menu of the application.
+    private Form2 Simulation { set; get; }  // The current simulation.
     
     public RestoController() {}
     
@@ -16,8 +17,15 @@ public class RestoController {
     }
 
     public void QuitApp(object sender, EventArgs e) {   // To close the app on the menu (with the button "Quitter").
-        
+
+        Menu = new Form1();
         Menu.Close();
+    }
+
+    public void StartASimulation(object sender, EventArgs e) {   // To start a new simulation on the app.
+
+        Simulation = new Form2();
+        Simulation.Show();
     }
 
     public void SetMenu(Form1 Menu) { this.Menu = Menu; }

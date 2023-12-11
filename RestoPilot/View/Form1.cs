@@ -3,6 +3,8 @@
 namespace RestoPilot.View;
 
 public partial class Form1 : Form {    // Form used to build the menu of the application.
+
+    private RestoController RestoController = new RestoController();
     public Form1() {
         
         InitializeComponent();
@@ -64,6 +66,7 @@ public partial class Form1 : Form {    // Form used to build the menu of the app
             this.Controls.Add(item);
         }
 
+        StartASimulationButton.Click += StartASimulation;
         QuitButton.Click += QuitApp;
     }
 
@@ -82,7 +85,7 @@ public partial class Form1 : Form {    // Form used to build the menu of the app
         List<PictureBox> PictureBoxList = new List<PictureBox>();   // List of all the PictureBoxes of the menu.
         
         PictureBox MenuBox = BuildCustomPictureBox(Image.FromFile("C:\\Users\\User\\Documents\\X2026\\X3 2023-2024\\SEM1 X3\\4 - Programmation concurrente\\Projet Programmation Système\\Images\\menu.PNG"), 1150, 150, 550, 200);
-        // PictureBoxList.Add(MenuBox);
+        PictureBoxList.Add(MenuBox);
         
         PictureBox WelcomeBox = BuildCustomPictureBox(Image.FromFile("C:\\Users\\User\\Documents\\X2026\\X3 2023-2024\\SEM1 X3\\4 - Programmation concurrente\\Projet Programmation Système\\Images\\simul1.png"), 200, 300, 675, 640);
         PictureBoxList.Add(WelcomeBox);
@@ -103,8 +106,14 @@ public partial class Form1 : Form {    // Form used to build the menu of the app
         this.Controls.Add(label);
     }
     
-    public void QuitApp(object sender, EventArgs e) {   // To close the app on the menu (with the button "Quitter").
+    private void QuitApp(object sender, EventArgs e) {   // To close the app on the menu (with the button "Quitter").
         
+        // RestoController.QuitApp(sender, e);
         this.Close();
+    }
+
+    public void StartASimulation(object sender, EventArgs e) {
+        
+        RestoController.StartASimulation(sender, e);
     }
 }
