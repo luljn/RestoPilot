@@ -1,15 +1,12 @@
+using RestoPilot.Controller;
+
 namespace RestoPilotTest;
 
-public class Tests {
-    
-    [SetUp]
-    public void Setup() {
-        
-    }
-
-    [Test]
-    public void Test1() {
-        
-        Assert.Pass();
+[TestClass]
+public class UnitTest1
+{
+    [TestMethod]
+    public void TestMethod1()
+    {
     }
 }

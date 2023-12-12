@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestoPilot", "RestoPilot\RestoPilot.csproj", "{5BA2106D-0960-4B89-BC4F-87B5DAA393FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestoPilotTest", "RestoPilotTest\RestoPilotTest.csproj", "{7BF5289F-93A1-46D6-A538-CAFF953336C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestoPilotTest", "RestoPilotTest\RestoPilotTest.csproj", "{E81A2DCE-5329-4562-979F-7B345B93A5EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +14,9 @@ Global
 		{5BA2106D-0960-4B89-BC4F-87B5DAA393FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BA2106D-0960-4B89-BC4F-87B5DAA393FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BA2106D-0960-4B89-BC4F-87B5DAA393FF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7BF5289F-93A1-46D6-A538-CAFF953336C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7BF5289F-93A1-46D6-A538-CAFF953336C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7BF5289F-93A1-46D6-A538-CAFF953336C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7BF5289F-93A1-46D6-A538-CAFF953336C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E81A2DCE-5329-4562-979F-7B345B93A5EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E81A2DCE-5329-4562-979F-7B345B93A5EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E81A2DCE-5329-4562-979F-7B345B93A5EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E81A2DCE-5329-4562-979F-7B345B93A5EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
