@@ -13,7 +13,7 @@ public partial class Form1 : Form {    // Form used to build the menu of the app
         PutGeneralLabelOnScreen();
     }
 
-    private Button BuildCustomButton(int PositionX = 50, int PositionY = 50, int Width = 550, int Height = 50, string ButtonText = "") {  // To Build Customize button for the menu.
+    public Button BuildCustomButton(int PositionX = 50, int PositionY = 50, int Width = 550, int Height = 50, string ButtonText = "") {  // To Build Customize button for the menu.
         
         Button button = new Button();
         button.Location = new Point(PositionX, PositionY);
@@ -23,7 +23,7 @@ public partial class Form1 : Form {    // Form used to build the menu of the app
         return button;
     }
 
-    private PictureBox BuildCustomPictureBox(Image Image, int PositionX = 50, int PositionY = 50, int Width = 550, int Height = 50) {
+    public PictureBox BuildCustomPictureBox(Image Image, int PositionX = 50, int PositionY = 50, int Width = 550, int Height = 50) {
         
         PictureBox PictureBox = new PictureBox();
         PictureBox.Location = new Point(PositionX, PositionY);
@@ -34,7 +34,7 @@ public partial class Form1 : Form {    // Form used to build the menu of the app
         return PictureBox;
     }
 
-    private void Form1Load(object sender, EventArgs e) {  // To customize the buttons elements of the menu.
+    public void Form1Load(object sender, EventArgs e) {  // To customize the buttons elements of the menu.
         
         /* Variables for buttons */
         int PositionX = 1150, PositionY = 450;
@@ -70,7 +70,7 @@ public partial class Form1 : Form {    // Form used to build the menu of the app
         QuitButton.Click += QuitApp;
     }
 
-    private void DesignButton(Button button) { // To design a button.
+    public void DesignButton(Button button) { // To design a button.
         
         // Changer la taille de la police du texte du bouton
         button.Font = new Font(button.Font.FontFamily, 25, button.Font.Style);
@@ -80,7 +80,7 @@ public partial class Form1 : Form {    // Form used to build the menu of the app
         button.Font = new Font(button.Font, FontStyle.Bold);
     }
 
-    private void PutPictureBoxesOnScreen() {
+    public void PutPictureBoxesOnScreen() {
         
         List<PictureBox> PictureBoxList = new List<PictureBox>();   // List of all the PictureBoxes of the menu.
         
@@ -96,7 +96,7 @@ public partial class Form1 : Form {    // Form used to build the menu of the app
         }
     }
     
-    private void PutGeneralLabelOnScreen() {
+    public void PutGeneralLabelOnScreen() {
 
         Label label = new Label();
         label.Text = "Bienvenue sur RestoPilot";
@@ -106,7 +106,7 @@ public partial class Form1 : Form {    // Form used to build the menu of the app
         this.Controls.Add(label);
     }
     
-    private void QuitApp(object sender, EventArgs e) {   // To close the app on the menu (with the button "Quitter").
+    public void QuitApp(object sender, EventArgs e) {   // To close the app on the menu (with the button "Quitter").
         
         // RestoController.QuitApp(sender, e);
         this.Close();
