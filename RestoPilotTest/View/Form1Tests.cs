@@ -2,7 +2,7 @@ using RestoPilot.Controller;
 using System.Drawing;
 using RestoPilot.View;
 
-namespace RestoPilotTest;
+namespace RestoPilotTest.View;
 
 [TestClass]
 public class Form1Tests {
