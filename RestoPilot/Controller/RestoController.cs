@@ -6,8 +6,6 @@ namespace RestoPilot.Controller;
 public class RestoController {
 
     private Form1 Menu { set; get; }   // The menu of the application.
-    private Form2 Simulation { set; get; }  // The current simulation.
-    private Restaurant Restaurant;
     
     public RestoController() {}
     
@@ -15,29 +13,15 @@ public class RestoController {
     public void Start() {     // To run the application.
         
         ApplicationConfiguration.Initialize();
-        Application.Run(Menu = new Form1());
+        Application.Run(this.Menu = new Form1());
     }
-
+    
     public void QuitApp(object sender, EventArgs e) {   // To close the app on the menu (with the button "Quitter").
 
-        Menu = new Form1();
-        Menu.Close();
+        // Menu = new Form1();
+        GetMenu().Close();
     }
-
-    public void StartASimulation(object sender, EventArgs e) {   // To start a new simulation on the app.
-
-        Simulation = new Form2();
-        this.Restaurant = new Restaurant();
-        
-        Simulation.Show();
-        
-        Simulation.Controls.Add(Restaurant.GetHall().GetHallBox());
-        Simulation.Controls.Add(Restaurant.GetKitchen().GetKitchenBox());
-        
-        Simulation.Controls.Add(Restaurant.BackToPrincipalMenuButton);
-        Simulation.Controls.Add(Restaurant.BreakButton);
-    }
-
+    
     public void SetMenu(Form1 Menu) { this.Menu = Menu; }
     
     public Form1 GetMenu() { return this.Menu; }

@@ -5,6 +5,10 @@ namespace RestoPilot.View;
 public partial class Form1 : Form {    // Form used to build the menu of the application.
 
     private RestoController RestoController = new RestoController();
+    private SimulationController SimulationController = new SimulationController();
+    private Button QuitButton;
+    private Button StartASimulationButton;
+        
     public Form1() {
         
         InitializeComponent();
@@ -112,8 +116,8 @@ public partial class Form1 : Form {    // Form used to build the menu of the app
         this.Close();
     }
 
-    public void StartASimulation(object sender, EventArgs e) {
+    public void StartASimulation(object sender, EventArgs e) {  // To start a new simulation.
         
-        RestoController.StartASimulation(sender, e);
+        SimulationController.StartASimulation(sender, e);
     }
 }
