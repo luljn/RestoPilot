@@ -67,8 +67,9 @@ CREATE TABLE Recettes (
 
 -- Création de la table des menus
 CREATE TABLE Menus (
-    IdMenu INT PRIMARY KEY IDENTITY(1,1)
-    -- Ajoutez d'autres attributs si nécessaire
+    IdMenu INT PRIMARY KEY IDENTITY(1,1),
+    Nom Varchar(100),
+    
 );
 
 -- Création de la table de la contenance des menus
@@ -95,21 +96,22 @@ CREATE TABLE Ustensiles (
                             TempsNettoyage TIME
 );
 
--- Création de la table de la zone de stockage
-CREATE TABLE ZoneStockage (
-                              IdStock INT PRIMARY KEY IDENTITY(1,1),
-                              Type VARCHAR(50) CHECK (Type IN ('Zone de denrees', 'Chambre Froide', 'Congelateur')),
-                              Quantite INT
-);
+
 
 -- Création de la table des ingrédients
 CREATE TABLE Ingredients (
                              IdIngredient INT PRIMARY KEY IDENTITY(1,1),
                              Nom VARCHAR(50),
                              QuantiteParPiece INT,
-                             IdStock INT FOREIGN KEY REFERENCES ZoneStockage(IdStock)
 );
 
+-- Création de la table de la zone de stockage
+CREATE TABLE ZoneStockage (
+                              IdStock INT PRIMARY KEY IDENTITY(1,1),
+                              Type VARCHAR(50) CHECK (Type IN ('Zone de denrees', 'Chambre Froide', 'Congelateur')),
+                              Quantite INT, --Quantite disponible
+                              IdIngredient INT FOREIGN KEY REFERENCES Ingredients(IdIngredient)
+);
 -- Création de la table du nécessaire pour les étapes
 CREATE TABLE NecessaireEtape (
                                  IdEtape INT FOREIGN KEY REFERENCES Etapes(IdEtape),
