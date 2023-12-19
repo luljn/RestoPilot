@@ -3,7 +3,7 @@
 # Members and Roles.
 
 - MBECK MBOH Lula (Luljn) : Project manager and Lead Developer.
-- KENMEGNE Yoann (2K26) : Database Adminitrator and Tester.
+- KENMOGNE Yoann (Ken-Andre) : Database Adminitrator and Tester.
 - NWANTOU Joy Patricia () : BackEnd Developer.
 - SOUMBOU Patrick Divin () : FrontEnd Developer. 
 
