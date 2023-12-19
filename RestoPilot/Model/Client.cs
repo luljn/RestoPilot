@@ -3,6 +3,7 @@
 public class Client : IMobile {
 
     private PictureBox ClientBox { get;  }
+    private int Speed { get; set; }   // Speed of move.
 
     public Client() {
 
@@ -14,23 +15,26 @@ public class Client : IMobile {
     }
     
     public PictureBox GetClientBox() { return this.ClientBox; }
+    
+    public int GetSpeed() { return this.Speed; }
+    public void SetSpeed(int _Speed) { this.Speed = _Speed; }
 
     public void Deplacement(object sender, EventArgs e) {
         
-        int speed = 2;         // move speed.
+        // Speed = 2;         // move speed.
         int direction = 1;
         int _direction = -1;
         
         if (this.GetClientBox().Top >= 0 && this.GetClientBox().Bottom <= 1040) {
             
-            this.GetClientBox().Top += speed * direction;
+            this.GetClientBox().Top += Speed * direction;
         }
         
         else if (this.GetClientBox().Top == 1000 && this.GetClientBox().Bottom == 1040) {
         
             while (this.GetClientBox().Top != 0) {
                 
-                this.GetClientBox().Top += speed * _direction;
+                this.GetClientBox().Top += Speed * _direction;
             }
         }
     }

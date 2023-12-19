@@ -1,5 +1,5 @@
 ﻿using RestoPilot.Model.Hall;
-using RestoPilot.Model.kitchen;
+using RestoPilot.Model.Kitchen;
 
 namespace RestoPilot.Model;
 
@@ -7,19 +7,20 @@ namespace RestoPilot.Model;
 public class Restaurant {
 
     private Hall.Hall Hall { get; }
-    private Kitchen Kitchen { get; }
+    private Kitchen.Kitchen Kitchen { get; }
     public Button BackToPrincipalMenuButton = BuildCustomButton(1360, 450, ButtonText:"Menu Principal");
     public Button BreakButton = BuildCustomButton(1360, 540, ButtonText:"Pause");
+    public Button ResumeTheSimulationButton = BuildCustomButton(1360, 630, ButtonText:"Resume Simulation");
     
     public Restaurant() {
 
         this.Hall = new Hall.Hall();
-        this.Kitchen = new Kitchen();
+        this.Kitchen = new Kitchen.Kitchen();
     }
 
     public Hall.Hall GetHall() { return this.Hall; }
     
-    public Kitchen GetKitchen() { return this.Kitchen; }
+    public Kitchen.Kitchen GetKitchen() { return this.Kitchen; }
     
     public static Button BuildCustomButton(int PositionX = 50, int PositionY = 50, int Width = 550, int Height = 80, string ButtonText = "") {  // To Build Customize button for the menu.
         

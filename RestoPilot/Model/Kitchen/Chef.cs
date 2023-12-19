@@ -1,4 +1,4 @@
-﻿namespace RestoPilot.Model;
+﻿namespace RestoPilot.Model.Kitchen;
 
 public class Chef { // Chef de cuisine.
     

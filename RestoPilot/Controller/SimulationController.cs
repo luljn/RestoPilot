@@ -1,4 +1,5 @@
-﻿using RestoPilot.Model;
+﻿using RestoPilot.Model; 
+using RestoPilot.Model.Kitchen;
 using RestoPilot.View;
 using Timer = System.Windows.Forms.Timer;
 
@@ -35,6 +36,7 @@ public class SimulationController {
         
         Simulation.Controls.Add(Restaurant.BackToPrincipalMenuButton);
         Simulation.Controls.Add(Restaurant.BreakButton);
+        Simulation.Controls.Add(Restaurant.ResumeTheSimulationButton);
         
         SimulationLoad(sender, e);
     }
@@ -48,35 +50,31 @@ public class SimulationController {
         
         this.Timer = new Timer();
         this.Timer.Interval = 16;
+        this.Client.SetSpeed(2);
         this.Timer.Tick += Client.Deplacement;
         this.Timer.Start();
 
-        Restaurant.BackToPrincipalMenuButton.Click += BackToPrincipalMenu;  // To return on the principal menu (button).
-    }
-
-    public void TimerTick(object sender, EventArgs e) {
-
-        int speed = 2;         // move speed.
-        int direction = 1;
-        int _direction = -1;
-        
-        if (this.Client.GetClientBox().Top >= 0 && this.Client.GetClientBox().Bottom <= 1040) {
-            
-            this.Client.GetClientBox().Top += speed * direction;
-        }
-        
-        else if (this.Client.GetClientBox().Top == 1000 && this.Client.GetClientBox().Bottom == 1040) {
-        
-            while (this.Client.GetClientBox().Top != 0) {
-                
-                this.Client.GetClientBox().Top += speed * _direction;
-            }
-        }
+        Restaurant.BackToPrincipalMenuButton.Click += BackToPrincipalMenu;      // To return on the principal menu (button).
+        Restaurant.BreakButton.Click += PutTheSimulationOnPause;               //  To pause the simulation (button). 
+        Restaurant.ResumeTheSimulationButton.Click += ResumeTheSimulation;     //  To Resume the simulation (button).
     }
     
     public void BackToPrincipalMenu(object sender, EventArgs e) {  // To return on the principal menu (function).
         
         this.Simulation.Close();
+    }
+
+    public void PutTheSimulationOnPause(object sender, EventArgs e) {  // To pause the simulation with the "Pause" button (function).
+        
+        this.Timer.Stop();
+        // this.Restaurant.BreakButton = this.Restaurant.ResumeTheSimulationButton;
+        // Simulation.Controls.Add(Restaurant.ResumeTheSimulationButton);
+        // this.Restaurant.ResumeTheSimulationButton.Click += ResumeTheSimulation;
+    }
+
+    public void ResumeTheSimulation(object sender, EventArgs e) {   // To Resume the simulation (function).
+        
+        this.Timer.Start();
     }
     
     public Restaurant GetRestaurant() { return this.Restaurant; }
