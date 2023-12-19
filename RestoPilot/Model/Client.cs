@@ -1,6 +1,6 @@
 ﻿namespace RestoPilot.Model;
 
-public class Client {
+public class Client : IMobile {
 
     private PictureBox ClientBox { get;  }
 
@@ -14,4 +14,24 @@ public class Client {
     }
     
     public PictureBox GetClientBox() { return this.ClientBox; }
+
+    public void Deplacement(object sender, EventArgs e) {
+        
+        int speed = 2;         // move speed.
+        int direction = 1;
+        int _direction = -1;
+        
+        if (this.GetClientBox().Top >= 0 && this.GetClientBox().Bottom <= 1040) {
+            
+            this.GetClientBox().Top += speed * direction;
+        }
+        
+        else if (this.GetClientBox().Top == 1000 && this.GetClientBox().Bottom == 1040) {
+        
+            while (this.GetClientBox().Top != 0) {
+                
+                this.GetClientBox().Top += speed * _direction;
+            }
+        }
+    }
 }

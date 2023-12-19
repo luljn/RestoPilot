@@ -17,4 +17,13 @@
       </Compile>
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Model\Hall\" />
+      <Folder Include="Model\Kitchen\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+    </ItemGroup>
+
 </Project>

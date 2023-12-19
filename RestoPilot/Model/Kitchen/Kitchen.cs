@@ -1,4 +1,4 @@
-﻿namespace RestoPilot.Model;
+﻿namespace RestoPilot.Model.kitchen;
 
 public class Kitchen {
     

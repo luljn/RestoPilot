@@ -1,19 +1,23 @@
-﻿namespace RestoPilot.Model;
+﻿using RestoPilot.Model.Hall;
+using RestoPilot.Model.kitchen;
+
+namespace RestoPilot.Model;
+
 
 public class Restaurant {
 
-    private Hall Hall { get; }
+    private Hall.Hall Hall { get; }
     private Kitchen Kitchen { get; }
     public Button BackToPrincipalMenuButton = BuildCustomButton(1360, 450, ButtonText:"Menu Principal");
     public Button BreakButton = BuildCustomButton(1360, 540, ButtonText:"Pause");
     
     public Restaurant() {
 
-        this.Hall = new Hall();
+        this.Hall = new Hall.Hall();
         this.Kitchen = new Kitchen();
     }
 
-    public Hall GetHall() { return this.Hall; }
+    public Hall.Hall GetHall() { return this.Hall; }
     
     public Kitchen GetKitchen() { return this.Kitchen; }
     
