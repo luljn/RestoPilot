@@ -4,7 +4,7 @@
 
 - MBECK MBOH Lula (Luljn) : Project manager and Lead Developer.
 - KENMEGNE Yoann (2K26) : Database Adminitrator and Tester.
-- NWANTOU Joy Patricia () : BackEnd Developer.
+- NWANTOU Joy Patricia (JoyPatricia) : BackEnd Developer.
 - SOUMBOU Patrick Divin () : FrontEnd Developer. 
 
 # Technologies used.
