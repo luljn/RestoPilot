@@ -62,6 +62,7 @@ CREATE TABLE Recettes (
                           tmpPreparation TIME,
                           tmpRepos TIME,
                           NbrePers INT,
+                          Prix MONEY,
                           Type VARCHAR(20) CHECK (Type IN ('entree', 'plat', 'dessert'))
 );
 

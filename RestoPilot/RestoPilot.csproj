@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <OutputType>WinExe</OutputType>
-        <TargetFramework>net7.0</TargetFramework>
+        <TargetFramework>net7.0-windows</TargetFramework>
         <Nullable>enable</Nullable>
         <UseWindowsForms>true</UseWindowsForms>
         <ImplicitUsings>enable</ImplicitUsings>
@@ -17,7 +17,13 @@
         <SubType>Form</SubType>
       </Compile>
     </ItemGroup>
-
+    <Target BeforeTargets="_CheckForTransitiveWindowsDesktopDependencies" Name="_FixSdkError_NETSDK1136">
+        <ItemGroup>
+            <TransitiveFrameworkReference Remove="Microsoft.WindowsDesktop.App" />
+            <TransitiveFrameworkReference Remove="Microsoft.WindowsDesktop.App.WPF" />
+            <TransitiveFrameworkReference Remove="Microsoft.WindowsDesktop.App.WindowsForms" />
+        </ItemGroup>
+    </Target>
     <ItemGroup>
       <Folder Include="Model\Hall\" />
       <Folder Include="Model\Kitchen\" />
