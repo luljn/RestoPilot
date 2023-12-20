@@ -112,6 +112,24 @@ INSERT INTO Ingredients (Nom, QuantiteParPiece) VALUES
                                                     ('Mochi Glace', 1), 
                                                     ('Gaufre', 1),
                                                     ('Madeleine', 1);
+-- Jeu de données pour Ustensiles
+INSERT INTO Ustensiles (Nom, Nombre, TempsNettoyage) VALUES
+                                                         ('Feu de cuisson', 5, '00:10:00'),
+                                                         ('Casserole', 10, '00:10:00'),
+                                                         ('Poele', 10, '00:10:00'),
+                                                         ('Four', 1, '00:20:00'),
+                                                         ('Cuillere en bois', 10, '00:05:00'),
+                                                         ('Mixeur', 1, '00:10:00'),
+                                                         ('Bol a salade', 5, '00:05:00'),
+                                                         ('Autocuiseur', 2, '00:15:00'),
+                                                         ('Presse-agrumes', 1, '00:05:00'),
+                                                         ('Tamis', 1, '00:05:00'),
+                                                         ('Entonnoir', 1, '00:05:00'),
+                                                         ('Couteau de cuisine', 5, '00:05:00'),
+                                                         ('Frigo de travail', 1, '00:30:00'),
+                                                         ('Lave-vaisselle', 1, '01:00:00'),
+                                                         ('Machine a laver', 1, '00:30:00'),
+                                                         ('Evier de grande capacite', 1, '00:10:00');
 
 
 -- Jeu de données pour ZoneStockage
@@ -124,54 +142,52 @@ INSERT INTO ZoneStockage (Type, Quantite, IdIngredient) VALUES
                                                             ('Chambre Froide', 100, 6);
 
 -- Jeu de données pour Recettes
-
 -- Plats
-INSERT INTO Recettes (Intitule, tmpCuisson, tmpPreparation, tmpRepos, NbrePers, Type) VALUES
-                                                                                          ('Ratatouille francaise', '00:30:00', '00:20:00', '00:15:00', 4, 'plat'),
-                                                                                          ('Ndole camerounais', '01:00:00', '00:30:00', '00:20:00', 6, 'plat'),
-                                                                                          ('Sauce arachide camerounaise', '00:45:00', '00:20:00', '00:15:00', 4, 'plat'),
-                                                                                          ('Poulet Grille', '00:30:00', '00:15:00', '00:10:00', 2, 'plat'),
-                                                                                          ('Spaghetti Bolognaise', '00:20:00', '00:20:00', '00:05:00', 4, 'plat'),
-                                                                                          ('Sushi Assorti', '00:25:00', '00:15:00', '00:10:00', 2, 'plat'),
-                                                                                          ('Salade Cesar', '00:15:00', '00:10:00', '00:05:00', 2, 'plat'),
-                                                                                          ('Brochette de Boeuf', '00:25:00', '00:15:00', '00:10:00', 2, 'plat'),
-                                                                                          ('Blancs de Poulet a la creme et au miel +riz','00:05:00','00:10:00','00:00:00',2,'plat'),
-                                                                                          ('Burger Americain', '00:15:00', '00:20:00', '00:05:00', 1, 'plat'),
-                                                                                          ('Pizza Ndole', '01:30:00', '00:30:00', '00:15:00', 4, 'plat'),
-                                                                                          ('Lasagnes Vegetariennes', '00:40:00', '00:20:00', '00:15:00', 4, 'plat'), -- Menu Végétarien
-                                                                                          ('Assortiment de Grillades', '00:30:00', '00:20:00', '00:15:00', 2, 'plat'), -- Menu Grillades
-                                                                                          ('Filet Mignon Truffe', '00:25:00', '00:15:00', '00:10:00', 2, 'plat'), -- Menu Gourmet
-                                                                                          ('Burger Express', '00:15:00', '00:10:00', '00:05:00', 2, 'plat'), -- Menu Rapide
-                                                                                          ('Salade Legere aux Herbes Fraiches', '00:10:00', '00:10:00', '00:05:00', 2, 'entree'), -- Menu Léger
-                                                                                          ('Poulet Yassa a la Mangue', '00:35:00', '00:20:00', '00:15:00', 4, 'plat'), -- Menu Savane Épicée
-                                                                                          ('Mango Sticky Rice', '00:20:00', '00:10:00', '00:10:00', 2, 'dessert'); -- Menu Douceur Tropicale
+INSERT INTO Recettes (Intitule, tmpCuisson, tmpPreparation, tmpRepos, NbrePers, Prix, Type) VALUES
+                                                                                                ('Ratatouille francaise', '00:30:00', '00:20:00', '00:15:00', 4, 15.99, 'plat'),
+                                                                                                ('Ndole camerounais', '01:00:00', '00:30:00', '00:20:00', 6, 22.50, 'plat'),
+                                                                                                ('Sauce arachide camerounaise', '00:45:00', '00:20:00', '00:15:00', 4, 18.75, 'plat'),
+                                                                                                ('Poulet Grille', '00:30:00', '00:15:00', '00:10:00', 2, 12.99, 'plat'),
+                                                                                                ('Spaghetti Bolognaise', '00:20:00', '00:20:00', '00:05:00', 4, 17.50, 'plat'),
+                                                                                                ('Sushi Assorti', '00:25:00', '00:15:00', '00:10:00', 2, 24.99, 'plat'),
+                                                                                                ('Salade Cesar', '00:15:00', '00:10:00', '00:05:00', 2, 14.99, 'plat'),
+                                                                                                ('Brochette de Boeuf', '00:25:00', '00:15:00', '00:10:00', 2, 19.99, 'plat'),
+                                                                                                ('Blancs de Poulet a la creme et au miel +riz','00:05:00','00:10:00','00:00:00',2, 16.99, 'plat'),
+                                                                                                ('Burger Americain', '00:15:00', '00:20:00', '00:05:00', 1, 11.99, 'plat'),
+                                                                                                ('Pizza Ndole', '01:30:00', '00:30:00', '00:15:00', 4, 21.99, 'plat'),
+                                                                                                ('Lasagnes Vegetariennes', '00:40:00', '00:20:00', '00:15:00', 4, 18.99, 'plat'), -- Menu Végétarien
+                                                                                                ('Assortiment de Grillades', '00:30:00', '00:20:00', '00:15:00', 2, 23.50, 'plat'), -- Menu Grillades
+                                                                                                ('Filet Mignon Truffe', '00:25:00', '00:15:00', '00:10:00', 2, 29.99, 'plat'), -- Menu Gourmet
+                                                                                                ('Burger Express', '00:15:00', '00:10:00', '00:05:00', 2, 14.99, 'plat'), -- Menu Rapide
+                                                                                                ('Salade Legere aux Herbes Fraiches', '00:10:00', '00:10:00', '00:05:00', 2, 12.99, 'entree'), -- Menu Léger
+                                                                                                ('Poulet Yassa a la Mangue', '00:35:00', '00:20:00', '00:15:00', 4, 20.99, 'plat'), -- Menu Savane Épicée
+                                                                                                ('Mango Sticky Rice', '00:20:00', '00:10:00', '00:10:00', 2, 15.99, 'dessert'); -- Menu Douceur Tropicale
 
-                                                                                          
 -- Entrées
-INSERT INTO Recettes (Intitule, tmpCuisson, tmpPreparation, tmpRepos, NbrePers, Type) VALUES
-                                                                                          ('Sushi japonais', '00:20:00', '00:15:00', '00:10:00', 2, 'entree'),
-                                                                                          ('Bruschetta Tomate Basilic', '00:10:00', '00:10:00', '00:05:00', 2, 'entree'),
-                                                                                          ('Soupe Misos', '00:15:00', '00:10:00', '00:05:00', 2, 'entree'),
-                                                                                          ('Beignets de Crevettes', '00:15:00', '00:20:00', '00:10:00', 4, 'entree'),
-                                                                                          ('Caprese Salad', '00:10:00', '00:10:00', '00:05:00', 2, 'entree'),
-                                                                                          ('Nems au Poulet', '00:15:00', '00:20:00', '00:10:00', 4, 'entree'),
-                                                                                          ('Salade de Fruits de Mer', '00:15:00', '00:10:00', '00:05:00', 2, 'entree'),
-                                                                                          ('Quiche Lorraine','00:15:00','00:35:00','00:00:00',6,'entree'),
-                                                                                          ('feuillete au crabe','00:10:00','00:20:00','',4,'entree'),
-                                                                                          ('Oeufs cocotte','00:10:00','00:20:00','',4,'entree');
+INSERT INTO Recettes (Intitule, tmpCuisson, tmpPreparation, tmpRepos, NbrePers, Prix, Type) VALUES
+                                                                                                 ('Sushi japonais', '00:20:00', '00:15:00', '00:10:00', 2, 19.99, 'entree'),
+                                                                                                ('Bruschetta Tomate Basilic', '00:10:00', '00:10:00', '00:05:00', 2, 14.99, 'entree'),
+                                                                                                ('Soupe Misos', '00:15:00', '00:10:00', '00:05:00', 2, 12.99, 'entree'),
+                                                                                                ('Beignets de Crevettes', '00:15:00', '00:20:00', '00:10:00', 4, 18.99, 'entree'),
+                                                                                                ('Caprese Salad', '00:10:00', '00:10:00', '00:05:00', 2, 15.99, 'entree'),
+                                                                                                ('Nems au Poulet', '00:15:00', '00:20:00', '00:10:00', 4, 17.99, 'entree'),
+                                                                                                ('Salade de Fruits de Mer', '00:15:00', '00:10:00', '00:05:00', 2, 22.99, 'entree'),
+                                                                                                ('Quiche Lorraine','00:15:00','00:35:00','00:00:00',6, 25.99, 'entree'),
+                                                                                                ('feuillete au crabe','00:10:00','00:20:00','',4, 20.99, 'entree'),
+                                                                                                ('Oeufs cocotte','00:10:00','00:20:00','',4, 16.99, 'entree');
 
 -- Desserts
-INSERT INTO Recettes (Intitule, tmpCuisson, tmpPreparation, tmpRepos, NbrePers, Type) VALUES
-                                                                                          ('Cheesecake aux Fruits Rouges', '00:45:00', '00:30:00', '01:00:00', 4, 'dessert'),
-                                                                                          ('Creme Brulee', '00:30:00', '00:15:00', '01:00:00', 4, 'dessert'),
-                                                                                          ('Crepes Nature', '00:00:00', '00:10:00', '01:00:00', 10, 'dessert'),
-                                                                                          ('Mochi Glace', '00:30:00', '00:20:00', '01:00:00', 4, 'dessert'),
-                                                                                          ('Tarte au Citron Meringuee', '00:40:00', '00:30:00', '01:00:00', 4, 'dessert'),
-                                                                                          ('Fondant au Chocolat', '00:25:00', '00:20:00', '00:10:00', 4, 'dessert'),
-                                                                                          ('Salade de Fruits Exotiques', '00:20:00', '00:15:00', '00:10:00', 2, 'dessert'),
-                                                                                          ('Gaufre','00:20:00','2:00:00','00:00:00',10,'dessert'),
-                                                                                          ('Tiramisu','00:10:00','00:00:00','1:00:00',4,'dessert'),
-                                                                                          ('Madeleine','00:45:00','00:15:00','00:00:00',10,'dessert');
+INSERT INTO Recettes (Intitule, tmpCuisson, tmpPreparation, tmpRepos, NbrePers, Prix, Type) VALUES
+                                                                                                ('Cheesecake aux Fruits Rouges', '00:45:00', '00:30:00', '01:00:00', 4, 26.99, 'dessert'),
+                                                                                                ('Creme Brulee', '00:30:00', '00:15:00', '01:00:00', 4, 21.99, 'dessert'),
+                                                                                                ('Crepes Nature', '00:00:00', '00:10:00', '01:00:00', 10, 15.99, 'dessert'),
+                                                                                                ('Mochi Glace', '00:30:00', '00:20:00', '01:00:00', 4, 18.99, 'dessert'),
+                                                                                                ('Tarte au Citron Meringuee', '00:40:00', '00:30:00', '01:00:00', 4, 22.50, 'dessert'),
+                                                                                                ('Fondant au Chocolat', '00:25:00', '00:20:00', '00:10:00', 4, 19.99, 'dessert'),
+                                                                                                ('Salade de Fruits Exotiques', '00:20:00', '00:15:00', '00:10:00', 2, 16.99, 'dessert'),
+                                                                                                ('Gaufre','00:20:00','2:00:00','00:00:00',10, 12.99, 'dessert'),
+                                                                                                ('Tiramisu','00:10:00','00:00:00','1:00:00',4, 18.75, 'dessert'),
+                                                                                                ('Madeleine','00:45:00','00:15:00','00:00:00',10, 14.99, 'dessert');
 
 -- Jeu de données pour Etapes (liées aux recettes ci-dessus)
 -- Jeu de données pour Etapes

@@ -117,7 +117,8 @@ CREATE TABLE ZoneStockage (
 CREATE TABLE NecessaireEtape (
                                  IdEtape INT FOREIGN KEY REFERENCES Etapes(IdEtape),
                                  IdUstensile INT FOREIGN KEY REFERENCES Ustensiles(IdUstensile),
-                                 IdIngredient INT FOREIGN KEY REFERENCES Ingredients(IdIngredient)
+                                 IdIngredient INT FOREIGN KEY REFERENCES Ingredients(IdIngredient),
+                                 QteIngredient INT,
 );
 
 -- Création de la table de la contenance des commandes (après avoir créé Recettes et Boissons)
