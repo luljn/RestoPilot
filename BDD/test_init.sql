@@ -51,7 +51,7 @@ CREATE TABLE Commandes (
 CREATE TABLE Boissons (
                           IdBoisson INT PRIMARY KEY IDENTITY(1,1),
                           Nom VARCHAR(50),
-                          Prix DECIMAL(10, 2)
+                          Prix MONEY
 );
 
 -- Création de la table des recettes

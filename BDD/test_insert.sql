@@ -24,6 +24,18 @@ INSERT INTO Tables (Capacite) VALUES
 -- Jeu de données pour Clients
 INSERT INTO Clients (Reservation, idTable) VALUES
                                                (1, 1), (0, 2), (1, 5); -- 3 clients
+-- Insertion de données dans la table Boissons
+INSERT INTO Boissons (Nom, Prix) VALUES
+                                     ('Eau minerale', 1.5),
+                                     ('Soda cola', 2.0),
+                                     ('Jus orange', 3.0),
+                                     ('Cafe noir', 2.5),
+                                     ('The vert', 2.2),
+                                     ('Vin rouge', 12.99),
+                                     ('Cocktail Mojito', 7.5),
+                                     ('Limonade', 2.8),
+                                     ('Smoothie aux fruits', 4.5),
+                                     ('Bieres assorties', 5.0);
 
 -- Jeu de données pour Ingredients
 -- Jeu de données unifié pour Ingredients
@@ -132,14 +144,7 @@ INSERT INTO Ustensiles (Nom, Nombre, TempsNettoyage) VALUES
                                                          ('Evier de grande capacite', 1, '00:10:00');
 
 
--- Jeu de données pour ZoneStockage
-INSERT INTO ZoneStockage (Type, Quantite, IdIngredient) VALUES
-                                                            ('Zone de denrees', 500, 1),
-                                                            ('Zone de denrees', 300, 2),
-                                                            ('Zone de denrees', 200, 3),
-                                                            ('Chambre Froide', 150, 4),
-                                                            ('Congelateur', 100, 5),
-                                                            ('Chambre Froide', 100, 6);
+
 
 -- Jeu de données pour Recettes
 -- Plats
@@ -189,6 +194,14 @@ INSERT INTO Recettes (Intitule, tmpCuisson, tmpPreparation, tmpRepos, NbrePers, 
                                                                                                 ('Tiramisu','00:10:00','00:00:00','1:00:00',4, 18.75, 'dessert'),
                                                                                                 ('Madeleine','00:45:00','00:15:00','00:00:00',10, 14.99, 'dessert');
 
+-- Jeu de données pour ZoneStockage
+INSERT INTO ZoneStockage (Type, Quantite, IdIngredient) VALUES
+                                                            ('Zone de denrees', 500, 1),
+                                                            ('Zone de denrees', 300, 2),
+                                                            ('Zone de denrees', 200, 3),
+                                                            ('Chambre Froide', 150, 4),
+                                                            ('Congelateur', 100, 5),
+                                                            ('Chambre Froide', 100, 6);
 -- Jeu de données pour Etapes (liées aux recettes ci-dessus)
 -- Jeu de données pour Etapes
 INSERT INTO Etapes (IdRecette, NumEtape, Temps, Description) VALUES
@@ -384,13 +397,44 @@ INSERT INTO Menus (Nom) VALUES
                             ('Menu Francais'),
                             ('Menu Asiatique'),
                             ('Menu Vegetarien'),
-                            ('Menu Grillades'),
-                            ('Menu Gourmet'),
-                            ('Menu Rapide'),
-                            ('Menu Exotique'),
                             ('Menu Leger'),
                             ('Menu Akwaba (Accueil Camerounais)'),
                             ('Menu Savane Epicee'),
                             ('Menu Douceur Tropicale');
+
+-- Insertion de données dans la table ContenanceMenu
+INSERT INTO ContenanceMenu (IdMenu, IdBoisson, IdRecette) VALUES
+        -- Menu Americain
+        (1, 1, 10), -- Eau minérale avec Burger Americain
+        (1, 3, 9),  -- Jus d'orange avec Blancs de Poulet a la creme et au miel +riz
+
+        -- Menu Francais
+        (2, 6, 1),  -- Vin rouge avec Ratatouille francaise
+        (2, 2, 7),  -- Soda cola avec Salade Cesar
+        
+        -- Menu Asiatique
+        (3, 8, 6),  -- Limonade avec Sushi Assorti
+        (3, 4, 19), -- Café noir avec Mango Sticky Rice
+        
+        -- Menu Vegetarien
+        (4, 3, 12), -- Jus d'orange avec Lasagnes Vegetariennes
+        (4, 5, 8),  -- Thé vert avec Salade Legere aux Herbes Fraiches
+        
+        -- Menu Leger
+        (5, 1, 7),  -- Eau minérale avec Brochette de Boeuf
+        (5, 5, 14), -- Thé vert avec Burger Express
+        
+        -- Menu Akwaba (Accueil Camerounais)
+        (6, 6, 2),  -- Vin rouge avec Ndole camerounais
+        (6, 3, 17), -- Jus d'orange avec Assortiment de Grillades
+        
+        -- Menu Savane Epicee
+        (7, 4, 11), -- Café noir avec Pizza Ndole
+        (7, 8, 18), -- Limonade avec Poulet Yassa a la Mangue
+        
+        -- Menu Douceur Tropicale
+        (8, 9, 20), -- Smoothie aux fruits avec Mango Sticky Rice
+        (8, 3, 5);  -- Jus d'orange avec Spaghetti Bolognaise
+
 
 
