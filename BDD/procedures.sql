@@ -100,3 +100,23 @@ BEGIN
 END;
     GO
     EXEC GenererCarteAleatoire;
+
+-- Procedure pour afficher les details d'une recette
+CREATE PROCEDURE AfficherDetailsRecette
+@IdRecette INT
+AS
+BEGIN
+    SELECT *
+    FROM Recettes
+    WHERE IdRecette = @IdRecette;
+
+    SELECT *
+    FROM Etapes
+    WHERE IdRecette = @IdRecette;
+
+    SELECT *
+    FROM NecessaireEtape
+    WHERE IdEtape IN (SELECT IdEtape FROM Etapes WHERE IdRecette = @IdRecette);
+END;
+Go
+EXEC AfficherDetailsRecette 2;

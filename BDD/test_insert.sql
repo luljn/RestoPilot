@@ -436,5 +436,40 @@ INSERT INTO ContenanceMenu (IdMenu, IdBoisson, IdRecette) VALUES
         (8, 9, 20), -- Smoothie aux fruits avec Mango Sticky Rice
         (8, 3, 5);  -- Jus d'orange avec Spaghetti Bolognaise
 
+-- Jeu de données pour NecessaireEtape
+INSERT INTO NecessaireEtape (IdEtape, IdUstensile, IdIngredient, QteIngredient) VALUES
+        -- Ratatouille française
+        (1, 1, 1, 2), -- Feu de cuisson
+        (1, 5, 6, 2), -- Cuillere en bois
+        (2, 4, 1, 1), -- Four
+        (3, 2, 10, 1), -- Casserole
+
+        -- Ndole camerounais
+        (4, 1, 10, 1), -- Feu de cuisson
+        (4, 5, 5, 2), -- Cuillere en bois
+        (5, 4, 8, 1), -- Autocuiseur
+        (6, 3, 2, 1), -- Poele
+        (7, 2, 25, 1), -- Bol a salade
+
+        -- Sauce arachide camerounaise
+        (8, 1, 4, 1), -- Feu de cuisson
+        (8, 5, 6, 1), -- Cuillere en bois
+        (9, 3, 28, 1), -- Presse-agrumes
+        (10, 4, 20, 1), -- Tamis
+
+        -- Poulet Grille
+        (11, 1, 14, 1), -- Feu de cuisson
+        (11, 5, 5, 2), -- Cuillere en bois
+        (12, 3, 18, 1), -- Poele
+        (13, 2, 29, 1), -- Couteau de cuisine
+
+        -- Spaghetti Bolognaise
+        (14, 4, 21, 1), -- Autocuiseur
+        (14, 5, 5, 2), -- Cuillere en bois
+        (15, 3, 24, 1), -- Mixeur
+        (16, 2, 27, 1), -- Frigo de travail
+        (17, 1, 11, 1); -- Entonnoir
+        
+        
 
 
