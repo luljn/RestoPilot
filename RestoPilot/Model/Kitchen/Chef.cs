@@ -7,12 +7,11 @@ public class Chef { // Chef de cuisine.
         public Chef() {
             
             this.ChefBox = new PictureBox();
-            this.ChefBox.Image = Image.FromFile("C:\\Users\\User\\Documents\\X2026\\X2 2022-2023\\SEM1 X2\\2 - Programmation Orienté Objet (Java)\\Projet Développement dune application POO-UML-JAVA\\assets\\images\\PLAYER\\idle1.png");
+            this.ChefBox.Image = Image.FromFile("C:\\Users\\User\\Documents\\X2026\\X2 2022-2023\\SEM1 X2\\2 - Programmation Orienté Objet (Java)\\Projet Développement dune application POO-UML-JAVA\\player_sprites\\tile081.png");
             this.ChefBox.Location = new Point(1100, 200);
             this.ChefBox.Size = new Size(40, 40);
             this.ChefBox.SizeMode = PictureBoxSizeMode.StretchImage;
         }
         
         public PictureBox GetChefBox() { return this.ChefBox; }
-    
 }

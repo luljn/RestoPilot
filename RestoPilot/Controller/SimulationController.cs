@@ -1,4 +1,5 @@
-﻿using RestoPilot.Model; 
+﻿using RestoPilot.Model;
+using RestoPilot.Model.Hall;
 using RestoPilot.Model.Kitchen;
 using RestoPilot.View;
 using Timer = System.Windows.Forms.Timer;
@@ -7,9 +8,11 @@ namespace RestoPilot.Controller;
 
 public class SimulationController {
     
-    private Form2 Simulation { set; get; }  // The current simulation.
+    private Form2 Simulation { set; get; }         // The current simulation.
     private Restaurant Restaurant;
-    private List<IMobile> MobileElements;   // List of all the mobile elements on the current simulation.
+    private static Factory Factory = new Factory();                         //   To build all the IMobile elements of the simulation.
+    private List<IMobile> HallMobileElements = Factory.BuildHallMobileElements();          // List of all the mobile elements on the current simulation for the Hall.
+    private List<IMobile> KitchenMobileElements = Factory.BuildKitchenMobileElements();      //  List of all the mobile elements on the current simulation for the Kitchen.
     private Timer Timer;
     private Client Client;
     private Butler Butler;
@@ -20,16 +23,42 @@ public class SimulationController {
     public void StartASimulation(object sender, EventArgs e) {   // To start a new simulation on the app.
 
         Simulation = new Form2();
-        this.Restaurant = new Restaurant();
-        this.Chef = new Chef();
-        
         Simulation.Show();
         
-        // Simulation.Controls.Add(Restaurant.GetHall().GetHallBox());
-        // Simulation.Controls.Add(Chef.GetChefBox());
+        SimulationLoad(sender, e);
+    }
+    
+    public void SimulationLoad(object sender, EventArgs e) {
         
+        this.Restaurant = new Restaurant();
+        this.Butler = new Butler();
+        this.Client = new Client();
+        this.Chef = new Chef();
+        // this.Factory = new Factory();
+        // this.HallMobileElements = Factory.BuildHallMobileElements();
+        // this.KitchenMobileElements = Factory.BuildKitchenMobileElements();
+        
+        foreach (IMobile element in HallMobileElements) {
+            
+            Restaurant.GetHall().GetHallBox().Controls.Add(element.GetBox());
+            element.Deplacement(sender, e);
+        }
+        
+        foreach (IMobile element in KitchenMobileElements) {
+            
+            Restaurant.GetKitchen().GetKitchenBox().Controls.Add(element.GetBox());
+            element.Deplacement(sender, e);
+        }
+        
+        Factory.PutSomeClientInTheRestaurant(this.Restaurant.GetHall());
+        
+        // Client.GetBox().Location = new Point(0, 260);
+        
+        
+        
+        Restaurant.GetHall().GetHallBox().Controls.Add(Butler.GetButlerBox());
+        Restaurant.GetHall().GetHallBox().Controls.Add(Client.GetBox());
         Restaurant.GetKitchen().GetKitchenBox().Controls.Add(Chef.GetChefBox());
-        // Restaurant.GetHall().GetHallBox().Controls.Add(Chef.GetChefBox());
         
         Simulation.Controls.Add(Restaurant.GetHall().GetHallBox());
         Simulation.Controls.Add(Restaurant.GetKitchen().GetKitchenBox());
@@ -38,21 +67,14 @@ public class SimulationController {
         Simulation.Controls.Add(Restaurant.BreakButton);
         Simulation.Controls.Add(Restaurant.ResumeTheSimulationButton);
         
-        SimulationLoad(sender, e);
-    }
-    
-    public void SimulationLoad(object sender, EventArgs e) {
-
-        this.Client = new Client();
-        this.Butler = new Butler();
-        Simulation.Controls.Add(Client.GetClientBox());
-        Simulation.Controls.Add(Butler.GetButlerBox());
-        
         this.Timer = new Timer();
-        this.Timer.Interval = 16;
-        this.Client.SetSpeed(2);
-        this.Timer.Tick += Client.Deplacement;
-        this.Timer.Start();
+        // this.Timer.Interval = 16;
+        // this.Client.SetSpeed(1);
+        // this.Timer.Tick += Client.Deplacement;
+        // this.Timer.Start();
+        
+        this.Client.SetSpeed(1);
+        this.Client.Deplacement(sender, e);
 
         Restaurant.BackToPrincipalMenuButton.Click += BackToPrincipalMenu;      // To return on the principal menu (button).
         Restaurant.BreakButton.Click += PutTheSimulationOnPause;               //  To pause the simulation (button). 
@@ -67,14 +89,31 @@ public class SimulationController {
     public void PutTheSimulationOnPause(object sender, EventArgs e) {  // To pause the simulation with the "Pause" button (function).
         
         this.Timer.Stop();
-        // this.Restaurant.BreakButton = this.Restaurant.ResumeTheSimulationButton;
-        // Simulation.Controls.Add(Restaurant.ResumeTheSimulationButton);
-        // this.Restaurant.ResumeTheSimulationButton.Click += ResumeTheSimulation;
+        
+        foreach (IMobile element in KitchenMobileElements) {
+            
+            element.GetTimer().Stop();
+        }
+        
+        foreach (IMobile element in HallMobileElements) {
+            
+            element.GetTimer().Stop();
+        }
     }
 
     public void ResumeTheSimulation(object sender, EventArgs e) {   // To Resume the simulation (function).
         
         this.Timer.Start();
+        
+        foreach (IMobile element in KitchenMobileElements) {
+            
+            element.GetTimer().Start();
+        }
+        
+        foreach (IMobile element in HallMobileElements) {
+            
+            element.GetTimer().Start();
+        }
     }
     
     public Restaurant GetRestaurant() { return this.Restaurant; }
