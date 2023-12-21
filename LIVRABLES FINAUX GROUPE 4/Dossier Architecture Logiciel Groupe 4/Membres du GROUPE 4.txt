@@ -1,0 +1,6 @@
+# Membres et rôles.
+
+- MBECK MBÔH Lula : Project manager et Lead Developer.
+- KENMEGNE Yoann  : Database Adminitrator et Testeur.
+- NWANTOU Joy     : BackEnd Developer.
+- SOUMBOU Patrick : FrontEnd Developer. 
