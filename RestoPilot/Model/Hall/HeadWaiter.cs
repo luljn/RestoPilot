@@ -40,13 +40,13 @@ public class HeadWaiter : IMobile { // Chef de rang.
         int direction = 1;
         int _direction = -1;
         bool isPaused = false;
-        int pauseDuration = 2000; // Durée de la pause en millisecondes (2 secondes)
+        int pauseDuration = 5000; // Durée de la pause en millisecondes (2 secondes)
         
         if (!isPaused) {
             
             // Exécutez le code souhaité lorsque le Timer n'est pas en pause
             // Par exemple, mettez à jour l'interface utilisateur, effectuez des calculs, etc.
-            if (this.GetBox().Top == 0 && this.GetBox().Bottom <= 90) {
+            if (this.GetBox().Top == 0 && this.GetBox().Bottom <= 400) {
                 
                 // Mettez le Timer en pause pendant la durée spécifiée
                 isPaused = true;
@@ -55,7 +55,7 @@ public class HeadWaiter : IMobile { // Chef de rang.
                 this.GetBox().Top += Speed * direction;
             }
             
-            else if (this.GetBox().Top > 0 && this.GetBox().Bottom < 90) {
+            else if (this.GetBox().Top > 0 && this.GetBox().Bottom < 400) {
             
                 this.GetBox().Top += Speed * direction;
             }
