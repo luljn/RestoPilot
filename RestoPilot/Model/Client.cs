@@ -41,22 +41,21 @@ public class Client : IMobile {
         int direction = 1;
         int _direction = -1;
         bool isPaused = false;
-        int pauseDuration = 2000; // Durée de la pause en millisecondes (2 secondes)
+        int pauseDuration = 5500; // Durée de la pause en millisecondes (2 secondes)
         
         if (!isPaused) {
             
-            // Exécutez le code souhaité lorsque le Timer n'est pas en pause
-            // Par exemple, mettez à jour l'interface utilisateur, effectuez des calculs, etc.
-            if (this.GetBox().Top == 0 && this.GetBox().Bottom <= 170) {
+            // On exécute le code souhaité lorsque le Timer n'est pas en pause
+            if (this.GetBox().Top == 0 && this.GetBox().Bottom <= 440) {
                 
-                // Mettez le Timer en pause pendant la durée spécifiée
+                // On met le Timer en pause pendant la durée spécifiée
                 isPaused = true;
                 await Task.Delay(pauseDuration);
                 isPaused = false;
                 this.GetBox().Top += Speed * direction;
             }
             
-            else if (this.GetBox().Top > 0 && this.GetBox().Bottom <= 170) {
+            else if (this.GetBox().Top > 0 && this.GetBox().Bottom <= 440) {
             
                 this.GetBox().Top += Speed * direction;
             }

@@ -12,7 +12,7 @@ public class Factory {
         List<IMobile> MobileElements = new List<IMobile>();
 
         RoomClerks RoomClerks = new RoomClerks();
-        RoomClerks.GetBox().Location = new Point(580, 460);
+        RoomClerks.GetBox().Location = new Point(580, 340);
 
         HeadWaiter HeadWaiter1 = new HeadWaiter();
         HeadWaiter HeadWaiter2 = new HeadWaiter();
@@ -75,12 +75,12 @@ public class Factory {
 
         Client1.GetBox().Location = new Point(540, 10);
         Client2.GetBox().Location = new Point(540, 130);
-        Client3.GetBox().Location = new Point(725, 460);
+        Client3.GetBox().Location = new Point(725, 340);
         Client4.GetBox().Location = new Point(775, 400);
         Client5.GetBox().Location = new Point(913, 25);
         Client6.GetBox().Location = new Point(913, 145);
         Client7.GetBox().Location = new Point(330, 400);
-        Client8.GetBox().Location = new Point(380, 460);
+        Client8.GetBox().Location = new Point(380, 340);
         
         Clients.Add(Client1);
         Clients.Add(Client2);
