@@ -21,4 +21,6 @@ public class DatabaseAccess {
         this.SqlCommand = new SqlCommand();
         this.DataSet = new DataSet();
     }
+    
+    public string GetCnx() { return this.Cnx; }
 }

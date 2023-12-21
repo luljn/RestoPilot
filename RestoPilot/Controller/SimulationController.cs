@@ -117,4 +117,10 @@ public class SimulationController {
     }
     
     public Restaurant GetRestaurant() { return this.Restaurant; }
+    
+    public Form2 GetSimulation() { return this.Simulation; }
+    
+    public List<IMobile> GetHallMobileElements() { return this.HallMobileElements; }
+    
+    public List<IMobile> GetKitchenMobileElements() { return this.KitchenMobileElements; }
 }

@@ -13,6 +13,7 @@ public class RestoController {
     public void Start() {     // To run the application.
         
         ApplicationConfiguration.Initialize();
+        System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
         Application.Run(this.Menu = new Form1());
     }
     
