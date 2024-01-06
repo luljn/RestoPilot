@@ -68,10 +68,10 @@ public class SimulationController {
         Simulation.Controls.Add(Restaurant.ResumeTheSimulationButton);
         
         this.Timer = new Timer();
-        // this.Timer.Interval = 16;
+        this.Timer.Interval = 16;
         // this.Client.SetSpeed(1);
         // this.Timer.Tick += Client.Deplacement;
-        // this.Timer.Start();
+        this.Timer.Start();
         
         this.Client.SetSpeed(1);
         this.Client.Deplacement(sender, e);
